@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Q4 {
+    public static void main(String[] args) {
+        Scanner object=new Scanner(System.in);
+        System.out.println("how many courses do you study");
+        int coursesNum=object.nextInt();
+        int[] grades  = new int[coursesNum];
+        String[] courses = new String[coursesNum];
+
+        numberCourses(grades,courses,coursesNum);
+        getMin(grades,courses, coursesNum);
+        getMax(grades,courses, coursesNum);
+    }
+
+
+
+    public static void numberCourses(int grades[],String courses[], int numberCourses){
+        Scanner obj=new Scanner(System.in);
+        for (int i=0;i<numberCourses;i++){
+            System.out.println("Enter your course name: ");
+            courses[i] = obj.next();
+            System.out.println("Enter your grade/100: ");
+            grades[i]= obj.nextInt();
+        }
+    }
+
+    public static void getMin(int grades[],String courses[], int numberCourses){
+        int min = 100;
+        String minCourse = "";
+
+        for(int i=0; i < numberCourses; i++){
+            if (grades[i] < min){
+                min = grades[i];
+                minCourse = courses[i];
+            }
+        }
+        System.out.println("The course with minimum grade is " + minCourse + " with grade " + min);
+    }
+
+    public static void getMax(int grades[],String courses[], int numberCourses){
+        int max = 0;
+        String maxCourse = "";
+
+        for(int i=0; i < numberCourses; i++){
+            if (grades[i] > max){
+                max = grades[i];
+                maxCourse = courses[i];
+            }
+        }
+        System.out.println("The course with maximum grade is " + maxCourse + " with grade " + max);
+    }
+}
