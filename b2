@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+public class b4 {
+
+        public static void main (String[]args) {
+        //Question 4
+        Scanner console = new Scanner(System.in);
+        System.out.println("Enter three angles of triangle: ");
+        double angle1 = console.nextDouble();
+        double angle2 = console.nextDouble();
+        double angle3 = console.nextDouble();
+        double sum = angle1 + angle2 + angle3;
+            boolean x = ((angle1 == 0)) || (angle2 == 0) || (angle3 == 0) || (sum != 180);
+            {
+            System.out.println("Triangle is not vaild.");
+                System.out.println("Triangle is valid");
+
+            }
+        }
+    }
