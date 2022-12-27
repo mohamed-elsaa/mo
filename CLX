@@ -1,0 +1,236 @@
+package com.DELTA;
+//Mohamed Attia Abdelkarim Elsaady 22101876
+public class Complex implements ActionListener {
+    public static double x;
+    public static double y;
+    static JComboBox<String> comboBox;
+    private Complex w;
+
+    public Complex(){
+    x = Double.parseDouble(JOptionPane.showInputDialog("enter real number (x) "));
+    y = Double.parseDouble(JOptionPane.showInputDialog("enter complex number (y) "));
+        new Complex(x,y);
+
+    JFrame frame;
+    frame = new JFrame("Complex function calc.");
+        frame.setSize(400, 100);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setTitle("");
+
+
+    JPanel panel = new JPanel();
+        frame.add(panel);
+    JLabel label = new JLabel("Choose operation :");
+        panel.add(label);
+
+
+        label.setHorizontalAlignment(JLabel.CENTER);
+
+    String[] type = {"Conjugate","Log","Exponential","Ln","Sin", "Cos", "sinh","Cosh"};
+    comboBox = new JComboBox<>(type);
+        comboBox.setLightWeightPopupEnabled(true);
+        comboBox.addActionListener(this);
+        comboBox.setBackground(Color.white);
+        comboBox.setBorder(new EmptyBorder(0, 0, 0, 0));
+
+
+        panel.add(comboBox);
+        comboBox.setVisible(true);
+        frame.setLocationRelativeTo(null);
+
+        frame.setVisible(true);
+}
+
+
+
+
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+        if(comboBox.getSelectedItem()=="Sin"){
+
+            showMessageDialog(null,new Complex(cosh(y)*Math.sin(x),sinh(y)*Math.cos(x)));
+            new Complex();
+
+        }
+        if(comboBox.getSelectedItem()=="Cos"){
+            showMessageDialog(null,new Complex(cosh(y)*Math.cos(x),-sinh(y)*Math.sin(x)));
+            new Complex();
+        }
+        if(comboBox.getSelectedItem()=="sinh"){
+            showMessageDialog(null,new Complex(sinh(x)*Math.cos(y),cosh(x)*Math.sin(y)));
+            new Complex();
+        }
+        if(comboBox.getSelectedItem()=="Cosh"){
+            showMessageDialog(null,new Complex(cosh(x)*Math.cos(y),sinh(x)*Math.sin(y)));
+            new Complex();
+        }
+
+        if(comboBox.getSelectedItem()=="Exponential"){
+            showMessageDialog(null,new Complex(Math.exp(x)*Math.cos(y),Math.exp(x)*Math.sin(y)));
+            new Complex();
+        }
+        if(comboBox.getSelectedItem()=="Ln"){
+            double r = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+            double thetaa = Math.atan(x/y);
+            double result = Math.log(r);
+            showMessageDialog(null,result+"+"+thetaa+"i");
+
+            new Complex();
+        }
+        if(comboBox.getSelectedItem()=="Conjugate"){
+            showMessageDialog(null,new Complex(x,-y));
+            new Complex();
+        }
+        if(comboBox.getSelectedItem()=="Log"){
+            showMessageDialog(null,new Complex(Math.log(this.mod()),this.arg()));
+            new Complex();
+        }
+
+    }
+
+
+
+
+
+
+
+    public Complex(double u,double v) {
+        x=u;
+        y=v;
+    }
+
+
+    public double real() {
+        return x;
+    }
+
+
+    public double imag() {
+        return y;
+    }
+
+
+    public double mod() {
+        if (x!=0 || y!=0) {
+            return Math.sqrt(x*x+y*y);
+        } else {
+            return 0d;
+        }
+    }
+
+    public double arg() {
+        return Math.atan2(y,x);
+    }
+
+
+    public Complex conj() {
+        return new Complex(x,-y);
+    }
+
+
+    public Complex plus(Complex w) {
+        return new Complex(x+w.real(),y+w.imag());
+    }
+
+    public Complex minus(Complex w) {
+        return new Complex(x-w.real(),y-w.imag());
+    }
+
+
+    public Complex times(Complex w) {
+        return new Complex(x*w.real()-y*w.imag(),x*w.imag()+y*w.real());
+    }
+
+    public Complex div(Complex w) {
+        double den=Math.pow(w.mod(),2);
+        return new Complex((x*w.real()+y*w.imag())/den,(y*w.real()-x*w.imag())/den);
+    }
+
+
+    public Complex exp() {
+        return new Complex(Math.exp(x)*Math.cos(y),Math.exp(x)*Math.sin(y));
+    }
+
+
+    public Complex log() {
+        return new Complex(Math.log(this.mod()),this.arg());
+    }
+
+    public Complex sqrt() {
+        double r=Math.sqrt(this.mod());
+        double theta=this.arg()/2;
+        return new Complex(r*Math.cos(theta),r*Math.sin(theta));
+    }
+
+    // Real cosh function (used to compute complex trig functions)
+    private double cosh(double theta) {
+        return (Math.exp(theta)+Math.exp(-theta))/2;
+    }
+
+    // Real sinh function (used to compute complex trig functions)
+    private double sinh(double theta) {
+        return (Math.exp(theta)-Math.exp(-theta))/2;
+    }
+
+
+    public Complex sin() {
+        return new Complex(cosh(y)*Math.sin(x),sinh(y)*Math.cos(x));
+    }
+
+
+    public Complex cos() {
+        return new Complex(cosh(y)*Math.cos(x),-sinh(y)*Math.sin(x));
+    }
+
+    public Complex sinh() {
+        return new Complex(sinh(x)*Math.cos(y),cosh(x)*Math.sin(y));
+    }
+
+
+    public Complex cosh() {
+        return new Complex(cosh(x)*Math.cos(y),sinh(x)*Math.sin(y));
+    }
+
+
+
+
+
+    public Complex chs() {
+        return new Complex(-x,-y);
+    }
+
+    public void Ln(double x , double y){
+        double r = Math.sqrt(Math.pow(x,2)+Math.pow(y,2));
+        double thetaa = Math.atan(x/y);
+        double rad= Math.toRadians(thetaa);
+        double result = Math.log(r);
+
+    }
+    /**
+     String representation of this Complex number.
+     x+i*y, x-i*y, x, or i*y as needed
+     .
+     */
+    public String toString() {
+        if (x!=0 && y>0) {
+            return x+" + "+y+"i";
+        }
+        if (x!=0 && y<0) {
+            return x+" - "+(-y)+"i";
+        }
+        if (y==0) {
+            return String.valueOf(x);
+        }
+        if (x==0) {
+            return y+"i";
+        }
+        // shouldn't get here (unless Inf or NaN)
+        return x+" + i*"+y;
+
+    }
+
+}
+
+
