@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Q2 {
+
+    public static int[] getVector(int vector[], int length){
+        Scanner obj = new Scanner(System.in);
+        for (int i = 0; i < length; i++) {
+            System.out.println("enter elements of the vector");
+            vector[i] = obj.nextInt();
+        }
+        return vector;
+    }
+
+    public static int dotProduct(int vectorA[], int vectorB[], int length){
+        int sum = 0;
+        int product = 0;
+        for(int i=0; i < length; i++) {
+            product = vectorA[i] * vectorB[i];
+            sum = sum + product;
+
+        }
+        return sum;
+    }
+
+
+    public static void main(String[] args) {
+        Scanner object = new Scanner(System.in);
+        int length;
+
+        System.out.println("enter length of elements");
+        length = object.nextInt();
+
+        int[] vectorA = new int[length];
+        int[] vectorB = new int[length];
+
+        System.out.println("enter elements of vector A");
+        getVector(vectorA, length);
+        System.out.println("enter elements of vector B");
+        getVector(vectorB, length);
+
+        System.out.println(dotProduct (vectorA, vectorB, length));
+    }
+
+}
