@@ -1,0 +1,269 @@
+//Mohamed attia abdelkream22101876
+import java.util.Scanner;
+public class Main {
+    public  static final int Mahmoud=10;
+    public static void main(String[] args) {
+        Scanner console = new Scanner(System.in);
+
+
+                //Exercise 1:
+
+                System.out.printf("The multiplication table of %d is:\n", Mahmoud, "\n");
+                System.out.print("\n");
+                System.out.print("     \t");
+
+                for (int i = 1; i <= Mahmoud; i++)
+                    System.out.printf(" %5d", i);
+                System.out.print("\n\t");
+
+                for (int i = 1; i <= (Mahmoud * 6) + 6; i++)
+                    System.out.print("-");
+                System.out.print("\n");
+
+                for (int i = 1; i <= Mahmoud; i++) {
+                    System.out.print("\t");
+                    System.out.printf("%-3d", +i);
+                    System.out.print("|");
+
+                    for (int B = 1; B <= Mahmoud; B++) {
+                        System.out.printf("%6d", +(i * B));
+
+                    }
+
+                    System.out.println();
+                }
+                System.out.println("\n");
+
+
+                //Exercise 2:
+
+
+                Mahmoud16();
+                Mahmoud16();
+                Mahmoud16();
+                System.out.println("\n");
+
+
+                //Exercise 3:
+
+
+                for (int s = 1; s <= 2; s++) {
+
+                    Mahmoud1();
+                    Mahmoud2();
+                    Mahmoud2();
+                    Mahmoud1();
+                    System.out.println("\n");
+
+                }
+
+                //Exercise 4:
+
+
+                System.out.print("Repetition: ");
+                int M = console.nextInt();
+                for (int n = 1; n <= M; n++) {
+
+                    Mahmoud3();
+                    Mahmoud4();
+                    Mahmoud5();
+                    System.out.println("\n");
+
+
+                }
+
+                //Exercise 5:
+
+
+                Mahmoud6();
+                Mahmoud7();
+
+                System.out.println("\n");
+
+                Mahmoud7();
+                Mahmoud6();
+
+                System.out.println("\n");
+
+                Mahmoud6();
+                Mahmoud11();
+                Mahmoud12();
+                Mahmoud11();
+                Mahmoud6();
+                System.out.println("\n");
+
+
+                //Exercise 6:
+
+                String Nextt;
+                do {
+                    Mahmoud3();
+                    Mahmoud5();
+                    System.out.print("Next or Stop: ");
+                    Nextt = console.next();
+                }
+
+                while (Nextt.equals("Next"));
+                {
+                    Mahmoud3();
+                    Mahmoud15();
+                    Mahmoud5();
+                    System.out.println('\n');
+
+                }
+
+
+                //Bonus Exercises:
+                // Exercise 2:
+
+                for (int G = 1; G <= 1; G++) {
+                    Mahmoud17();
+                }
+                for (int G = 1; G <= 1; G++) {
+                    Mahmoud18();
+                }
+                for (int G = 1; G <= 1; G++) {
+                    Mahmoud19();
+                }
+                for (int G = 1; G <= 1; G++) {
+                    Mahmoud20();
+                }
+                for (int G = 1; G <= 1; G++) {
+                    Mahmoud21();
+                }
+                System.out.println("                 *****************************************************");
+
+
+                for (int A = 1; A <= 15; A++) {
+                    System.out.println("*");
+                }
+
+
+            }
+
+
+            ////////////////----------------------------------------------------------------------------------------------------
+
+
+            //this is number 3
+            public static void Mahmoud1() {
+                System.out.println("      \"+------+\"       ");
+            }
+
+            public static void Mahmoud2() {
+                System.out.println("      \"|      |\"       ");
+            }
+
+            //this is number 4
+            public static void Mahmoud3() {
+
+                System.out.println("       ___________        ");
+                System.out.println("     /             \\     ");
+                System.out.println("    /               \\    ");
+            }
+
+
+            public static void Mahmoud4() {
+                System.out.println("      -\"-'-\"-\"-'-\"-   ");
+            }
+
+            public static void Mahmoud5() {
+
+                System.out.println("    \\               /    ");
+                System.out.println("     \\ ___________ /     ");
+            }
+
+            public static void Mahmoud6() {
+
+                System.out.println("    /\\           /\\     ");
+                System.out.println("   /  \\         /  \\    ");
+                System.out.println("  /    \\       /    \\   ");
+
+            }
+
+            public static void Mahmoud7() {
+
+                System.out.println("  \\    /       \\    /   ");
+                System.out.println("   \\  /         \\  /    ");
+                System.out.println("    \\/           \\/     ");
+
+            }
+
+
+            public static void Mahmoud11() {
+
+                System.out.println(" +------+     +------+        ");
+                System.out.println(" |      |     |      |        ");
+                System.out.println(" |      |     |      |        ");
+                System.out.println(" +------+     +------+        ");
+
+            }
+
+            public static void Mahmoud12() {
+
+                System.out.println(" |United|     |United|        ");
+                System.out.println(" |States|     |States|        ");
+
+            }
+
+
+            public static void Mahmoud15() {
+
+                System.out.println("          stop!          ");
+
+            }
+
+            public static void Mahmoud16() {
+
+                System.out.println("        ######     ");
+                System.out.println("         ####      ");
+                System.out.println("          ##       ");
+                System.out.println("           #       ");
+            }
+
+
+            //Bonus Exercises:
+            // Exercise 2:
+
+            public static void Mahmoud17() {
+                System.out.println("                                                          o ******          ");
+                System.out.println("                                                         /|\\ *             ");
+                System.out.println("                                                         / \\ *             ");
+            }
+
+            public static void Mahmoud18() {
+                System.out.println("                                                   o ******                   ");
+                System.out.println("                                                  /|\\ *                      ");
+                System.out.println("                                                  / \\ *                      ");
+            }
+
+            public static void Mahmoud19() {
+                System.out.println("                                          o ******                                 ");
+                System.out.println("                                         /|\\ *                                    ");
+                System.out.println("                                         / \\ *                                    ");
+            }
+
+            public static void Mahmoud20() {
+                System.out.println("                               o ******                                                     ");
+                System.out.println("                              /|\\ *                                                        ");
+                System.out.println("                              / \\ *                                                        ");
+            }
+
+            public static void Mahmoud21() {
+                System.out.println("                    o ******                                                  ");
+                System.out.println("                   /|\\ *                                                      ");
+                System.out.println("                   / \\ *      " +
+                        "                                                ");
+                double Squarr =Math.sqrt(Mahmoud);
+                        double mo=Math.pow(Mahmoud,3);
+                        double fourpower=Math.pow(Mahmoud,3);
+                System.out.println(("%-10s%-10s%-10s\n,squarr"));
+
+                System.out.println("%-10.3s%-10.3s%-10s\n, mo , Squarr");
+                System.out.println("2.32     25    125    625");
+
+
+            }
+
+
+        }
