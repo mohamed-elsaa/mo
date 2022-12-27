@@ -1,8 +1,7 @@
-
 import java.util.Arrays;
 import java.util.Scanner;
 public class Q1 {
-      // ^_^  Mohamed Attia Abdelkarim Elsaady 
+      // ^_^  Mohamed Attia Abdelkarim Elsaady - Group:6 - ID:22101876  ^_^
     public static void main(String[] args) {
         Scanner Scanner = new Scanner(System.in);
         //First ques1
