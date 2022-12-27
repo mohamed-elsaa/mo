@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Q3 {
+
+    public static void main(String[] args) {
+        Scanner object=new Scanner(System.in);
+        int length= object.nextInt();
+        int[] vector = new int[length];
+        int number;
+
+        vector = getElements(length, vector);
+
+        System.out.println("Enter a number to check its occurrence.");
+        number = object.nextInt();
+
+        int count = 0;
+
+        for(int i = 0;i < length; i++){
+            if (number == vector[i]) {
+                count++;
+            }
+        }
+        System.out.println("element " + number + " is repeated " + count + " times.");
+    }
+
+    public static int[] getElements(int length,int n[]) {
+        Scanner object = new Scanner(System.in);
+        for (int i = 0; i < length; i++) {
+            System.out.println("enter elements of the vector");
+            n[i] = object.nextInt();
+        }
+        return n;
+    }
+}
